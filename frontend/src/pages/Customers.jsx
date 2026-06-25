@@ -141,7 +141,7 @@ const Customers = () => {
                   <td>{cust.phone || <span className="empty-txt">-</span>}</td>
                   <td>
                     <span className={`balance-badge ${cust.balance > 0 ? 'owes-money' : 'settled'}`}>
-                      ${cust.balance.toFixed(2)}
+                      ₹{cust.balance.toFixed(2)}
                     </span>
                   </td>
                   {isAdmin && (
@@ -222,7 +222,7 @@ const Customers = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Opening / Adjusted Balance ($)</label>
+              <label className="form-label">Opening / Adjusted Balance (₹)</label>
               <input 
                 type="number" 
                 step="0.01"

@@ -172,7 +172,7 @@ const SalesOrders = () => {
                   <td>{ord.customer.name}</td>
                   <td>{new Date(ord.orderDate).toLocaleDateString()}</td>
                   <td>{ord.shippingDate ? new Date(ord.shippingDate).toLocaleDateString() : <span className="pending-txt">Unshipped</span>}</td>
-                  <td className="total-txt">${ord.totalAmount.toFixed(2)}</td>
+                  <td className="total-txt">₹{ord.totalAmount.toFixed(2)}</td>
                   <td>
                     <span className={`badge badge-${
                       ord.status === 'SHIPPED' || ord.status === 'DELIVERED' ? 'success' : ord.status === 'CONFIRMED' ? 'info' : ord.status === 'CANCELLED' ? 'danger' : 'warning'
@@ -254,8 +254,8 @@ const SalesOrders = () => {
                       <td>{item.product.name}</td>
                       <td className="sku-code">{item.product.sku}</td>
                       <td>{item.quantity}</td>
-                      <td>${item.unitPrice.toFixed(2)}</td>
-                      <td>${(item.unitPrice * item.quantity).toFixed(2)}</td>
+                      <td>₹{item.unitPrice.toFixed(2)}</td>
+                      <td>₹{(item.unitPrice * item.quantity).toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -264,7 +264,7 @@ const SalesOrders = () => {
               <div className="detail-footer-summary">
                 <div className="summary-block">
                   <span className="summary-lbl">Grand Total:</span>
-                  <span className="summary-val">${selectedOrder.totalAmount.toFixed(2)}</span>
+                  <span className="summary-val">₹{selectedOrder.totalAmount.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -346,7 +346,7 @@ const SalesOrders = () => {
                   >
                     <option value="">Select Customer...</option>
                     {customers.map(c => (
-                      <option key={c.id} value={c.id}>{c.name} (Outstanding: ${c.balance.toFixed(2)})</option>
+                      <option key={c.id} value={c.id}>{c.name} (Outstanding: ₹{c.balance.toFixed(2)})</option>
                     ))}
                   </select>
                 </div>
@@ -416,7 +416,7 @@ const SalesOrders = () => {
               <div className="modal-footer footer-drawer">
                 <div className="drawer-total-preview">
                   <span>Subtotal Total:</span>
-                  <span className="preview-val">${calculateDrawerTotal().toFixed(2)}</span>
+                  <span className="preview-val">₹{calculateDrawerTotal().toFixed(2)}</span>
                 </div>
                 <div className="drawer-actions">
                   <button type="button" className="btn btn-secondary" onClick={() => setCreateOpen(false)}>Cancel</button>

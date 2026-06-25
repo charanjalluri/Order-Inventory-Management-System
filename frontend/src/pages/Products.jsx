@@ -250,8 +250,8 @@ const Products = () => {
                     </td>
                     <td>{prod.category ? prod.category.name : 'N/A'}</td>
                     <td>{prod.supplier ? prod.supplier.name : 'N/A'}</td>
-                    <td className="price-txt">${prod.price.toFixed(2)}</td>
-                    <td className="cost-txt">${prod.costPrice.toFixed(2)}</td>
+                    <td className="price-txt">₹{prod.price.toFixed(2)}</td>
+                    <td className="cost-txt">₹{prod.costPrice.toFixed(2)}</td>
                     <td className="qty-txt">
                       <span>{prod.stockQuantity}</span>
                       <span className="min-label">/ Min: {prod.minStockLevel}</span>

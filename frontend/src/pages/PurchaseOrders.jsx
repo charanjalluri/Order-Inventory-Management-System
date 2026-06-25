@@ -163,7 +163,7 @@ const PurchaseOrders = () => {
                   <td>{ord.supplier.name}</td>
                   <td>{new Date(ord.orderDate).toLocaleDateString()}</td>
                   <td>{ord.deliveryDate ? new Date(ord.deliveryDate).toLocaleDateString() : <span className="pending-txt">Pending</span>}</td>
-                  <td className="total-txt">${ord.totalAmount.toFixed(2)}</td>
+                  <td className="total-txt">₹{ord.totalAmount.toFixed(2)}</td>
                   <td>
                     <span className={`badge badge-${
                       ord.status === 'RECEIVED' ? 'success' : ord.status === 'ORDERED' ? 'info' : ord.status === 'CANCELLED' ? 'danger' : 'warning'
@@ -245,8 +245,8 @@ const PurchaseOrders = () => {
                       <td>{item.product.name}</td>
                       <td className="sku-code">{item.product.sku}</td>
                       <td>{item.quantity}</td>
-                      <td>${item.unitPrice.toFixed(2)}</td>
-                      <td>${(item.unitPrice * item.quantity).toFixed(2)}</td>
+                      <td>₹{item.unitPrice.toFixed(2)}</td>
+                      <td>₹{(item.unitPrice * item.quantity).toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -255,7 +255,7 @@ const PurchaseOrders = () => {
               <div className="detail-footer-summary">
                 <div className="summary-block">
                   <span className="summary-lbl">Grand Total:</span>
-                  <span className="summary-val">${selectedOrder.totalAmount.toFixed(2)}</span>
+                  <span className="summary-val">₹{selectedOrder.totalAmount.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -395,7 +395,7 @@ const PurchaseOrders = () => {
               <div className="modal-footer footer-drawer">
                 <div className="drawer-total-preview">
                   <span>Subtotal Total:</span>
-                  <span className="preview-val">${calculateDrawerTotal().toFixed(2)}</span>
+                  <span className="preview-val">₹{calculateDrawerTotal().toFixed(2)}</span>
                 </div>
                 <div className="drawer-actions">
                   <button type="button" className="btn btn-secondary" onClick={() => setCreateOpen(false)}>Cancel</button>

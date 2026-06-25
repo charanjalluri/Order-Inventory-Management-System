@@ -56,21 +56,21 @@ const Dashboard = () => {
   const kpis = [
     {
       title: 'Total Sales Revenue',
-      value: `$${stats?.totalSales?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
+      value: `₹${stats?.totalSales?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
       subtitle: 'Completed sales',
       icon: TrendingUp,
       color: 'success',
     },
     {
       title: 'Total Procurement Cost',
-      value: `$${stats?.totalPurchases?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
+      value: `₹${stats?.totalPurchases?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
       subtitle: 'Issued purchase orders',
       icon: TrendingDown,
       color: 'danger',
     },
     {
       title: 'Total Inventory Value',
-      value: `$${stats?.totalInventoryValue?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
+      value: `₹${stats?.totalInventoryValue?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
       subtitle: 'Cost-basis stock valuation',
       icon: DollarSign,
       color: 'brand',
@@ -213,7 +213,7 @@ const Dashboard = () => {
                         {ord.type}
                       </span>
                     </td>
-                    <td>${ord.amount?.toFixed(2)}</td>
+                    <td>₹{ord.amount?.toFixed(2)}</td>
                     <td>
                       <span className={`badge badge-${
                         ord.status === 'RECEIVED' || ord.status === 'DELIVERED' 

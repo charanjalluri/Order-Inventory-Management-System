@@ -87,7 +87,7 @@ const Reports = () => {
         <div className="reports-kpi-card glass-panel">
           <div className="kpi-body">
             <span className="lbl">Gross Sales Revenue</span>
-            <span className="val">${salesVal.toFixed(2)}</span>
+            <span className="val">₹{salesVal.toFixed(2)}</span>
             <span className="sub">Sum of all confirmed sales orders</span>
           </div>
           <div className="kpi-badge success"><TrendingUp size={16} /></div>
@@ -96,7 +96,7 @@ const Reports = () => {
         <div className="reports-kpi-card glass-panel">
           <div className="kpi-body">
             <span className="lbl">Procurement Expense</span>
-            <span className="val">${costVal.toFixed(2)}</span>
+            <span className="val">₹{costVal.toFixed(2)}</span>
             <span className="sub">Sum of all processed purchase orders</span>
           </div>
           <div className="kpi-badge danger"><TrendingDown size={16} /></div>
@@ -106,7 +106,7 @@ const Reports = () => {
           <div className="kpi-body">
             <span className="lbl">Estimated Gross Margin</span>
             <span className={`val ${grossProfit >= 0 ? 'profit-text' : 'loss-text'}`}>
-              ${grossProfit.toFixed(2)}
+              ₹{grossProfit.toFixed(2)}
             </span>
             <span className="sub">Calculated sales margin (gross profit)</span>
           </div>
@@ -118,7 +118,7 @@ const Reports = () => {
         <div className="reports-kpi-card glass-panel">
           <div className="kpi-body">
             <span className="lbl">Stock Valuation Value</span>
-            <span className="val">${(stats?.totalInventoryValue || 0).toFixed(2)}</span>
+            <span className="val">₹{(stats?.totalInventoryValue || 0).toFixed(2)}</span>
             <span className="sub">Valued at standard manufacturer cost prices</span>
           </div>
           <div className="kpi-badge brand"><BarChart3 size={16} /></div>

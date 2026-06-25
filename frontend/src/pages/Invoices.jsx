@@ -108,8 +108,8 @@ const Invoices = () => {
                   <td>{inv.salesOrder.customer.name}</td>
                   <td>{new Date(inv.invoiceDate).toLocaleDateString()}</td>
                   <td>{new Date(inv.dueDate).toLocaleDateString()}</td>
-                  <td>${inv.taxAmount.toFixed(2)}</td>
-                  <td className="total-txt">${inv.totalAmount.toFixed(2)}</td>
+                  <td>₹{inv.taxAmount.toFixed(2)}</td>
+                  <td className="total-txt">₹{inv.totalAmount.toFixed(2)}</td>
                   <td>
                     <span className={`badge badge-${
                       inv.status === 'PAID' ? 'success' : inv.status === 'OVERDUE' ? 'danger' : 'warning'
@@ -238,8 +238,8 @@ const Invoices = () => {
                         <td className="doc-sku">{item.product.sku}</td>
                         <td>{item.product.name}</td>
                         <td>{item.quantity}</td>
-                        <td>${item.unitPrice.toFixed(2)}</td>
-                        <td className="cell-right">${(item.unitPrice * item.quantity).toFixed(2)}</td>
+                        <td>₹{item.unitPrice.toFixed(2)}</td>
+                        <td className="cell-right">₹{(item.unitPrice * item.quantity).toFixed(2)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -250,15 +250,15 @@ const Invoices = () => {
                   <div className="totals-table">
                     <div className="totals-row">
                       <span>Subtotal:</span>
-                      <span>${viewInvoice.salesOrder.totalAmount.toFixed(2)}</span>
+                      <span>₹{viewInvoice.salesOrder.totalAmount.toFixed(2)}</span>
                     </div>
                     <div className="totals-row">
                       <span>Sales Tax (10.00%):</span>
-                      <span>${viewInvoice.taxAmount.toFixed(2)}</span>
+                      <span>₹{viewInvoice.taxAmount.toFixed(2)}</span>
                     </div>
                     <div className="totals-row grand-total-row">
                       <span>Total Amount Due:</span>
-                      <span>${viewInvoice.totalAmount.toFixed(2)}</span>
+                      <span>₹{viewInvoice.totalAmount.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
