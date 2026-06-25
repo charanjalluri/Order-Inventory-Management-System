@@ -1,0 +1,31 @@
+# System
+.DS_Store
+Thumbs.db
+*.log
+
+# Backend (Spring Boot Maven)
+/backend/target/
+/backend/.idea/
+/backend/*.iml
+/backend/.settings/
+/backend/.classpath
+/backend/.project
+/backend/bin/
+
+# Frontend (React Vite)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+/frontend/.eslintcache
+
+# Local editor settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
