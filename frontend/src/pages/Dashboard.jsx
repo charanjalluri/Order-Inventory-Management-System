@@ -4,7 +4,7 @@ import {
   TrendingUp, 
   TrendingDown, 
   AlertTriangle, 
-  DollarSign, 
+  IndianRupee, 
   PackageCheck, 
   ClipboardList 
 } from 'lucide-react';
@@ -72,7 +72,7 @@ const Dashboard = () => {
       title: 'Total Inventory Value',
       value: `₹${stats?.totalInventoryValue?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || '0.00'}`,
       subtitle: 'Cost-basis stock valuation',
-      icon: DollarSign,
+      icon: IndianRupee,
       color: 'brand',
     },
     {

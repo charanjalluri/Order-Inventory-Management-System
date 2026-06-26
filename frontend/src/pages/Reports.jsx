@@ -4,7 +4,7 @@ import {
   FileSpreadsheet, 
   BarChart3, 
   TrendingUp, 
-  DollarSign, 
+  IndianRupee, 
   ShieldAlert,
   ArrowRight,
   TrendingDown
@@ -111,7 +111,7 @@ const Reports = () => {
             <span className="sub">Calculated sales margin (gross profit)</span>
           </div>
           <div className={`kpi-badge ${grossProfit >= 0 ? 'success' : 'danger'}`}>
-            <DollarSign size={16} />
+            <IndianRupee size={16} />
           </div>
         </div>
 

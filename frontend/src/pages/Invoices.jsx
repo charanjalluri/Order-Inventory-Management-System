@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import api from '../services/api';
-import { Eye, DollarSign, X, Printer, CheckCircle, FileText } from 'lucide-react';
+import { Eye, IndianRupee, X, Printer, CheckCircle, FileText } from 'lucide-react';
 
 const Invoices = () => {
   const [searchParams] = useSearchParams();
@@ -124,7 +124,7 @@ const Invoices = () => {
                     {inv.status !== 'PAID' && (
                       <>
                         <button className="icon-btn pay-btn" onClick={() => handlePay(inv.id)} title="Record Payment">
-                          <DollarSign size={14} />
+                          <IndianRupee size={14} />
                         </button>
                         {inv.status === 'UNPAID' && (
                           <button className="icon-btn overdue-btn" onClick={() => handleOverdue(inv.id)} title="Mark Overdue">
